@@ -4,12 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-// import { Provider } from 'react-redux';
+
 
 ReactDOM.render(
-  // <Provider >
+
     <App />,
-// </Provider >,
+
   document.getElementById('root')
 );
 

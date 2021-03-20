@@ -2,9 +2,10 @@ import './App.css';
 import NavBar from './components/navbar'
 import Container from './components/container';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-// import MovieList from './components/movieList';
-import WebLayout from './components/web.layout';
 import React from 'react';
+import MovieList from './components/movieList';
+//https://www.basefactor.com/global-state-with-react
+//above is a helpful source I used for the use of globalState 
 let globalState = {
   movies: [
     {
@@ -18,6 +19,7 @@ let globalState = {
       sumVotes: 0,
       averageRating: 0,
       // TODO: Apply to other films
+      //To track all the votes per button
       votes: {
         onestar: 0,
         twostars: 0,
@@ -37,6 +39,14 @@ let globalState = {
       totalVotes: 0,
       sumVotes: 0,
       averageRating: 0,
+
+      votes: {
+        onestar: 0,
+        twostars: 0,
+        threestars: 0,
+        fourstars: 0,
+        fivestars: 0,
+      }
     },
 
     {
@@ -49,6 +59,34 @@ let globalState = {
       totalVotes: 0,
       sumVotes: 0,
       averageRating: 0,
+
+      votes: {
+        onestar: 0,
+        twostars: 0,
+        threestars: 0,
+        fourstars: 0,
+        fivestars: 0,
+      }
+    },
+
+      {      
+        id: 3,
+        image: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSycy8vRa9ende-qVYJhgQwAEp9maxX1hO_p8sqIULmIXFEgYPf',
+        Title: 'All Dogs Go To Heaven',
+        Date: 'November 17, 1989',
+        Genre: 'Family/Musical',
+        Synopsis: 'placeholder',
+        totalVotes: 0,
+        sumVotes: 0,
+        averageRating: 0,
+  
+        votes: {
+          onestar: 0,
+          twostars: 0,
+          threestars: 0,
+          fourstars: 0,
+          fivestars: 0,
+      }
     },
   ],
   totalAllVotes: 0,
@@ -62,7 +100,8 @@ function App() {
       {/* <header className="App-header">"Review or ReBOO!!!"</header> */}
       <body id="color">
         <NavBar />,
-      <WebLayout />,
+        {/* to pass the globalState onto it */}
+      <MovieList globalState={globalState}/>,
       <Container globalState={globalState} />,
 
       </body>
