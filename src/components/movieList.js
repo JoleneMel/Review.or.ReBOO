@@ -22,6 +22,7 @@ let movies;
 if(this.state.movies) {
     //we will modifiy this code, this is going to take both the comment and the index of the posistion of that comment in that array 
     //it makes the comment key the index and uses the spread method to make sure its the current comment
+    //make state = globalState
     movies = this.state.movies.map((movie, index) => <Movie key={index} {...movie} />);
 }
 
