@@ -22,7 +22,7 @@ export default class Stars extends React.Component {
 //so this is where it is defined, ABOVE is where it is bind this and use it by name 
 handleClick() {
     //this will also be changed greatly by the new terms of the business 
-    this.props.onClick(this.props.name, this.props.value);
+    this.props.onClick(this.props.value);
 }
     render() {
         //return a JSX button, w/bootstrap 

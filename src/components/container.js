@@ -35,7 +35,6 @@ export default class Container extends React.Component {
             this.globalState.movies[this.movieIndex].sumVotes += value;
             //(average = sum of all votes / total number of clicks)
             this.globalState.movies[this.movieIndex].averageRating = this.globalState.movies[this.movieIndex].sumVotes / this.globalState.movies[this.movieIndex].totalVotes;
-        
             //then we just need to return the this.globalstate, needs this. to work
             return this.globalState;
         });
@@ -46,11 +45,9 @@ export default class Container extends React.Component {
         return (
             <div className="container">
                 <div id="stars.line">
-                    {/* this globalState is to make sure h2 can be reused  first h2 is for testing */}
-                    <h2>just for fun{this.globalState.totalAllVotes}</h2>
-                    <h2 id="averageRating">Average Rating {this.globalState.movies[this.movieIndex].averageRating}</h2>
+                    <h2 className="averageRating">Average Rating {this.globalState.movies[this.movieIndex].averageRating}</h2>
                     <h2>this is the sum of all votes {this.globalState.movies[this.movieIndex].sumVotes}</h2>
-                    <h2 id="totalRatings">total number of clicks {this.globalState.movies[this.movieIndex].totalVotes}</h2>
+                    <h2 className="totalRatings">total number of clicks {this.globalState.movies[this.movieIndex].totalVotes}</h2>
                     <Stars
                         name="1 Star"
                         vote={this.globalState.movies[this.movieIndex].votes.onestar}

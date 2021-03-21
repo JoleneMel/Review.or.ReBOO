@@ -4,11 +4,13 @@ import Container from './components/container';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import MovieList from './components/movieList';
+import ReviewForm from './components/reviewForm';
 //https://www.basefactor.com/global-state-with-react
 //above is a helpful source I used for the use of globalState 
 let globalState = {
   movies: [
     {
+      //right now if the ids are changed it could cause a problem with the unique keys
       id: 0,
       image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShhQmWrd7gqouln_mhRDdoLy8MkIOwZj1cNx7xhUU2I4cB0IEJ',
       Title: 'My Neighbor Totoro',
@@ -18,15 +20,15 @@ let globalState = {
       totalVotes: 0,
       sumVotes: 0,
       averageRating: 0,
-      // TODO: Apply to other films
-      //To track all the votes per button
+
       votes: {
         onestar: 0,
         twostars: 0,
         threestars: 0,
         fourstars: 0,
         fivestars: 0,
-      }
+      },
+      reviews: [],
     },
 
     {
@@ -46,7 +48,8 @@ let globalState = {
         threestars: 0,
         fourstars: 0,
         fivestars: 0,
-      }
+      },
+      reviews: [],
     },
 
     {
@@ -66,7 +69,8 @@ let globalState = {
         threestars: 0,
         fourstars: 0,
         fivestars: 0,
-      }
+      },
+      reviews: [],
     },
 
       {      
@@ -86,7 +90,8 @@ let globalState = {
           threestars: 0,
           fourstars: 0,
           fivestars: 0,
-      }
+      },
+      reviews: [],
     },
   ],
   totalAllVotes: 0,
@@ -94,10 +99,11 @@ let globalState = {
 
 
 function App() {
+
+
   return (
 
     <div className="App">
-      {/* <header className="App-header">"Review or ReBOO!!!"</header> */}
       <body id="color">
         <NavBar />,
         {/* to pass the globalState onto it */}
