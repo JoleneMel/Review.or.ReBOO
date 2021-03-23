@@ -3,9 +3,19 @@ background-color: rgb(49, 49, 49);
 
 }
 
-#averageRating {
-  
+#reviewInput {
+  height: 200px;
+  width: 800px;
 }
+
+label {
+  font-size: 25px;
+}
+
+#movieSynopsis {
+  font-size: 55px;
+}
+
 #menu {
   background-color: rgba(7, 71, 168, 0.3);
   padding: 10px;

@@ -1,16 +1,14 @@
 import './App.css';
 import NavBar from './components/navbar'
-import Container from './components/container';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import MovieList from './components/movieList';
-import ReviewForm from './components/reviewForm';
-//https://www.basefactor.com/global-state-with-react
-//above is a helpful source I used for the use of globalState 
-let globalState = {
+
+
+const globalState = {
   movies: [
     {
-      //right now if the ids are changed it could cause a problem with the unique keys
+
       id: 0,
       image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShhQmWrd7gqouln_mhRDdoLy8MkIOwZj1cNx7xhUU2I4cB0IEJ',
       Title: 'My Neighbor Totoro',
@@ -37,7 +35,7 @@ let globalState = {
       Title: 'Finding Nemo',
       Date: 'May 30, 2003',
       Genre: 'Family/Adventure',
-      Synopsis: 'When a son go missing its up to his father and his pal Dory to find him again',
+      Synopsis: 'Marlin a clown fish is over protective over Nemo who has a foreshortened fin. When Nemo tries to prove himself he is caught by a diver. Its up to Dory and Merlin to save him', 
       totalVotes: 0,
       sumVotes: 0,
       averageRating: 0,
@@ -58,7 +56,7 @@ let globalState = {
       Title: 'Sonic The Hedgehog',
       Date: 'Febuary 14, 2020',
       Genre: 'Family/Comedy',
-      Synopsis: 'blue blur',
+      Synopsis: 'Sonic video game Icon now stars in his new movie! He cannot interact with anyone though, making him lonely until he bumps into a cop who aids him on his journey on getting his rings back.',
       totalVotes: 0,
       sumVotes: 0,
       averageRating: 0,
@@ -79,7 +77,7 @@ let globalState = {
         Title: 'All Dogs Go To Heaven',
         Date: 'November 17, 1989',
         Genre: 'Family/Musical',
-        Synopsis: 'placeholder',
+        Synopsis: 'An under rated flim staring the late Judith Eva Barsi playing an orphan who goes on a journey with Charlie(the dog that cheated death) and Itchy to find a family.',
         totalVotes: 0,
         sumVotes: 0,
         averageRating: 0,
@@ -105,10 +103,8 @@ function App() {
 
     <div className="App">
       <body id="color">
-        <NavBar />,
-        {/* to pass the globalState onto it */}
+      <NavBar />,
       <MovieList globalState={globalState}/>,
-      <Container globalState={globalState} />,
 
       </body>
     </div>
