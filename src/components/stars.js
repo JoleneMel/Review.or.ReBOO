@@ -1,20 +1,11 @@
 import React from 'react';
 
-// const starValue = ['1 Star', '2 Stars', '3 Stars', '4 Stars', '5 Stars']
-// const starValue = {
-//   '1 Star': 1,
-//   '2 Stars': 2,
-//   '3 Stars': 3,
-//   '4 Stars': 4,
-//   '5 Stars': 5
-// }
 
 export default class Stars extends React.Component {
     //the constructor is going to take in the props 
     constructor(props) {
         super(props);
-        //state removed
-        //BUT WE STILL NEED TO BIND OUR METHOD FOR IT TO PROPERLY REPLACE THE ABOVE EXAMPLE LIKE SO 
+
         this.handleClick = this.handleClick.bind(this);
         //that now allows us to bind handleClick to the this and we can now us it 
     }

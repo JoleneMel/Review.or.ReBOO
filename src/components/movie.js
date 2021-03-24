@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Rating from './rating';
 import ReviewForm from './reviewForm';
 
@@ -6,7 +6,7 @@ import ReviewForm from './reviewForm';
 export default class Movie extends React.Component {
     constructor(props) {
         super(props);
-            this.state = { reviews: [] };
+            this.state = { reviews: new Array() };
             this.handleClick = this.handleClick.bind(this);
             this.globalState = this.props.globalState;
         }
@@ -15,11 +15,11 @@ export default class Movie extends React.Component {
         }
         onFormSubmit(formState) {
             const reviews = this.state.reviews.slice();
-            reviews.push(JSON.stringify(formState));
-            this.setState({
+            reviews.push(formState); 
+            this.setState ({
                 reviews
             })
-          }
+        }
         render() {
             // console.log(this.state.reviews);
             return(
@@ -32,7 +32,9 @@ export default class Movie extends React.Component {
                     <li id="movieDate"> Date: {this.props.Date} </li>
                 </ul>
                 <Rating />
-                <div>{ this.state.reviews }</div>
+                {this.state.reviews.map(function(review, index){
+                    return <div key={index}>{review.title} {review.reviewInfo}</div>;
+                })}
                 <ReviewForm onSubmit={ (formState) => this.onFormSubmit(formState) }/>
                 </div>
 
