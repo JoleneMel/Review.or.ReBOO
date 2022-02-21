@@ -11,3 +11,6 @@ Master is a Beta/in progress non complete model
 
 
 Onward (because I felt super proud) is the final working model! :) 
+
+
+Note I use global State 
